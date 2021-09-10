@@ -20,6 +20,6 @@ We are currently exploring, developing and testing few ideas related to all the 
 Using this modular approach, we can focus on a particular functionality/feature at a time 
 and then eventually combining the pieces together into the final game prototype.<br/><br/>
 
-### Things That Inspire Us<br/>
+### What Inspire Us<br/>
 We are a huge fun of Jenova Chen’s game design. 
 For us games are more than just mere entertainment, they are powerful communication means through which people can learn and feel.<br/><br/>
