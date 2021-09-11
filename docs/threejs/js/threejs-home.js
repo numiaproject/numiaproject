@@ -2,7 +2,7 @@ const scene = new THREE.Scene();
 
 const renderer = new THREE.WebGLRenderer({ antialiasing: false });
 //renderer.setPixelRatio( 2.0); INCREASE QUALITY
-renderer.setClearColor( 0x000000, 1);
+renderer.setClearColor( 0x91bad6, 1);
  var container = document.getElementsByClassName('home')[0];
  var w = container.offsetWidth;
  var h = container.offsetHeight;
@@ -29,8 +29,10 @@ for (let i=0; i < 200; i++)
 		THREE.MathUtils.randFloatSpread(1000),
 		THREE.MathUtils.randFloat(-500, 0)
 	);
+	
+	let dir = 1 - THREE.MathUtils.randInt(0, 1) * 2; //this should yield either 1 or -1.
 
-	point.velocity = THREE.MathUtils.randFloatSpread(0.2);
+	point.velocity = THREE.MathUtils.randFloat(0.2, 0.4) * dir;
 	point.acceleration = 0.0;
 
 	particleSystem.vertices.push(point);
