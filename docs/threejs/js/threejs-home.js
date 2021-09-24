@@ -21,7 +21,7 @@ scene.add(light);
 
 let particleSystem, point, particles, particleCount;
 
-particleCount = 120;
+particleCount = 250;
 
 particleSystem = new THREE.Geometry();
 for (let i=0; i < particleCount; i++) 
@@ -60,6 +60,9 @@ var delta = 0;
 	https://www.youtube.com/watch?v=Bed1z7f1EI4
 */
 
+/* OTHER GENERAL VARIABLE */
+var margin = 100; //margin for extending the boundary for the particle; gonna be added to height and width.
+
 //========================CUSTOM FUNCTION =======================//
 function updateParticleSystem()
 {
@@ -89,12 +92,12 @@ function updateParticleSystem()
 		vector.x = ( vector.x + 1) * w / 2;
 		vector.y = - ( vector.y - 1) * h / 2;
 
-		if(vector.x > w || vector.x<0) 
+		if(vector.x > (w+margin) || vector.x<(0-margin)) 
 		{
 			p.velocity.x = -p.velocity.x;
 		}
 
-		if(vector.y > h || vector.y <0)
+		if(vector.y > (h+margin) || vector.y <(0-margin))
 		{
 			p.velocity.y = -p.velocity.y;
 		}
