@@ -1,3 +1,7 @@
+//Texture loader
+const loader = new THREE.TextureLoader();
+const particleTexture = loader.load('./images/numia/particletexture.png');
+
 const scene = new THREE.Scene();
 
 const renderer = new THREE.WebGLRenderer({ antialiasing: false });
@@ -44,7 +48,12 @@ for (let i=0; i < particleCount; i++)
 	particleSystem.vertices.push(point);
 }
 
-const material = new THREE.PointsMaterial( { color: 0xFFFFFF } );
+const material = new THREE.PointsMaterial( {
+	size: 3,
+	map: particleTexture,
+	transparent: true, //needed to actually see the particle texture
+	color: 0xFFFFFF 
+} );
 
 particles = new THREE.Points( particleSystem, material );
 
