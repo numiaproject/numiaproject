@@ -30,7 +30,7 @@ const invoke = async function(action, version, params={}) {
             }
         });
 
-        xhr.open('POST', 'https://0.0.0.0:8765');
+        xhr.open('POST', 'http://0.0.0.0:8765');
         xhr.send(JSON.stringify({action, version, params}));
     });
 }
