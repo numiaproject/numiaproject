@@ -1,3 +1,65 @@
+//ANKI lol
+//source
+//https://foosoft.net/projects/anki-connect/ 
+
+// invoke
+const invoke = async function(action, version, params={}) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('error', () => reject('failed to issue request'));
+        xhr.addEventListener('load', () => {
+            try {
+                const response = JSON.parse(xhr.responseText);
+                if (Object.getOwnPropertyNames(response).length != 2) {
+                    throw 'response has an unexpected number of fields';
+                }
+                if (!response.hasOwnProperty('error')) {
+                    throw 'response is missing required error field';
+                }
+                if (!response.hasOwnProperty('result')) {
+                    throw 'response is missing required result field';
+                }
+                if (response.error) {
+                    throw response.error;
+                }
+                resolve(response.result);
+            } catch (e) {
+                reject(e);
+            }
+        });
+
+        xhr.open('POST', 'http://127.0.0.1:8765');
+        xhr.send(JSON.stringify({action, version, params}));
+    });
+}
+  
+// Start function
+const start = async function(action, version, params={}) {
+
+//function to create a test deck
+//await invoke('createDeck', 6, {deck: 'test1'});
+
+//get deck names
+const result = await invoke('deckNames', 6);
+
+var h1 = document.createElement('h1');
+h1.textContent = 'Got list of anki decks:\r\n';
+
+var p = document.createElement('p');
+p.setAttribute('style', 'white-space: pre;');
+result.forEach(name => {
+    p.textContent += name + '\r\n';
+});
+
+document.getElementById('home-image-box').appendChild(h1);
+document.getElementById('home-image-box').appendChild(p);
+}
+  
+// Call start
+start();
+
+//=======================================//
+
 //Texture loader
 const loader = new THREE.TextureLoader();
 const particleTexture = loader.load('./images/numia/particletexture.png');
