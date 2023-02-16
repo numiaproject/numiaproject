@@ -2,6 +2,8 @@
 //source
 //https://foosoft.net/projects/anki-connect/ 
 
+ANKICONNECT_BIND_ADDRESS = "0.0.0.0"
+
 // invoke
 const invoke = async function(action, version, params={}) {
     return new Promise((resolve, reject) => {
