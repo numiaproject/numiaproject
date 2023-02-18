@@ -2,7 +2,7 @@
 //source
 //https://foosoft.net/projects/anki-connect/ 
 
-ANKICONNECT_BIND_ADDRESS = "0.0.0.0"
+ANKI_URL = 'http://127.0.0.1:8765'
 
 // invoke
 const invoke = async function(action, version, params={}) {
@@ -30,7 +30,7 @@ const invoke = async function(action, version, params={}) {
             }
         });
 
-        xhr.open('POST', 'http://0.0.0.0:8765');
+        xhr.open('POST', ANKI_URL);
         xhr.send(JSON.stringify({action, version, params}));
     });
 }
@@ -38,6 +38,8 @@ const invoke = async function(action, version, params={}) {
 // Start function
 const start = async function(action, version, params={}) {
 
+const permissionResult = await invoke('requestPermission', 6);	
+	
 //function to create a test deck
 //await invoke('createDeck', 6, {deck: 'test1'});
 
