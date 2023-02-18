@@ -2,7 +2,7 @@
 //source
 //https://foosoft.net/projects/anki-connect/ 
 
-ANKI_URL = 'http://127.0.0.1:8765'
+ANKI_URL = 'http://0.0.0.0:8765'
 
 // invoke
 const invoke = async function(action, version, params={}) {
