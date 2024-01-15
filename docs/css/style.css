@@ -9958,7 +9958,7 @@ body {
 
 #space-gap
 {
-	background: #91bad6;
+	background: #44546a;
 }
 
 #home-image-box
@@ -10006,7 +10006,7 @@ body {
 }
 
 .menu-bg {
-	background: #91bad6;
+	background: #44546a;
 }
 
 /*========= FOOTER ========*/
@@ -10037,7 +10037,7 @@ footer {
 }
 
 .social-icons ul li a:hover {
-	color:#91bad6;
+	color:#44546a;
 }
 
 /*==== SCROLL UP =====*/
@@ -10049,7 +10049,7 @@ footer {
 	bottom:30px;
 	right:15px;
 	display:none;
-	background:#91bad6;
+	background:#44546a;
 	text-align: center;
 }
 
@@ -10065,21 +10065,21 @@ footer {
 }
 
 a {
-	color:#91bad6;
+	color:#44546a;
 }
 
 /*======= HOVER and SELECTION =======*/
 
 a:hover, a:active, a:focus {
-	color:#91bad6;
+	color:#44546a;
 }
 
 ::selection {
- background: #91bad681;
+ background: #44546a;
  color:#FFF;
 }
 
 ::-moz-selection {
- background:#91bad6;
+ background:#44546a;
  color:#FFF;
 }

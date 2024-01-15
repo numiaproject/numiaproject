@@ -6,7 +6,7 @@ const scene = new THREE.Scene();
 
 const renderer = new THREE.WebGLRenderer({ antialiasing: false });
 //renderer.setPixelRatio( 2.0); INCREASE QUALITY
-renderer.setClearColor( 0x91bad6, 1);
+renderer.setClearColor( 0x44546a, 1);
  var container = document.getElementsByClassName('home')[0];
  var w = container.offsetWidth;
  var h = container.offsetHeight;
